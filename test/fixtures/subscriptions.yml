@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plan_name: MyString
+  duration: 1
+  status: MyString
+  price: 9.99
+  renewal_price: 9.99
+
+two:
+  plan_name: MyString
+  duration: 1
+  status: MyString
+  price: 9.99
+  renewal_price: 9.99

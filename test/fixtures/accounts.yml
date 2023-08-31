@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: 2023-08-30
+  end_date: 2023-08-30
+  renewal_date: 2023-08-30
+  trial_start_date: 2023-08-30
+  trial_end_date: 2023-08-30
+  billing_date: 2023-08-30
+  notice_period: 1
+  is_active: false
+  has_expired: false
+  subscription: one
+
+two:
+  start_date: 2023-08-30
+  end_date: 2023-08-30
+  renewal_date: 2023-08-30
+  trial_start_date: 2023-08-30
+  trial_end_date: 2023-08-30
+  billing_date: 2023-08-30
+  notice_period: 1
+  is_active: false
+  has_expired: false
+  subscription: two
