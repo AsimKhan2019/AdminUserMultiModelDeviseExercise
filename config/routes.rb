@@ -7,6 +7,14 @@ Rails.application.routes.draw do
 	  sessions: 'users/sessions'
   }
   
+  namespace :admin do
+	resources :properties 
+  end 
+
+  namespace :users do
+	resources :properties 
+  end
+
   root 'pages#home'
   
   get 'pages/users'
