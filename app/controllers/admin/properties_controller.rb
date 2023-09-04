@@ -13,7 +13,7 @@ class Admin::PropertiesController < ApplicationController
 	def create
 		@property = Property.new(property_params)
 		if @property.save 
-			redirect_to admin_properties_path, notice: 'Property was successfully saved'
+			redirect_to admin_properties_path, notice: 'Property created successfully'
 		else
 			render :new
 		end 
@@ -21,14 +21,33 @@ class Admin::PropertiesController < ApplicationController
 
 	def edit 
 		@property = Property.find(params[:id])
+		
+		puts 'Before editing the value of current property is '  
+		puts @property.inspect
+		puts @property.amenity.inspect
+		#@amenity = @property.amenity.inspect
 	end 
 
 	def update 
 		@property = Property.find(params[:id])
-		if @property.update(property_params)
-			redirect_to admin_properties_path, notice: 'Property was successfully updated'
+		
+		puts 'About to update the property values, the current values are '  
+		puts @property.inspect
+		puts @property.amenity.inspect
+		#@amenity = @property.amenity.inspect
+
+		if @property.update(property_params) #&& @amenity.update(amenity_params)
+			redirect_to admin_property_path(@property), notice: 'Property updated successfully'
+			
+			puts 'The new property values are '  
+			puts @property.inspect
+			puts @property.amenity.inspect
 		else
-			render :edit 
+			render :edit
+			
+			puts 'The property update failed '  
+			puts @property.inspect  
+			puts @property.amenity.inspect
 		end 
 	end 
 
@@ -41,6 +60,13 @@ class Admin::PropertiesController < ApplicationController
 	private 
 
 	def property_params
-		params.require(:property).permit(:title, :name, :owner, :email, :coverage, amenity_attributes: [:has_pool, :has_garage, :has_balcony, :has_roof, :has_terrace, :has_kitchen, :has_storage, :has_barbq, :has_gym, :has_studio, :has_cinema])
-	end 
+		params.require(:property).permit(:title, :name, :owner, :email, :coverage, 
+		amenity_attributes: [:id, :has_pool, :has_garage, :has_balcony, :has_roof, :has_terrace, :has_kitchen, :has_storage, :has_barbq, 
+		:has_gym, :has_studio, :has_cinema])
+	end
+	
+	#def amenity_params
+	#	params.require(:amenity).permit(:has_pool, :has_garage, :has_balcony, :has_roof, :has_terrace, :has_kitchen, :has_storage, :has_barbq, 
+	#	:has_gym, :has_studio, :has_cinema)
+	#end
 end

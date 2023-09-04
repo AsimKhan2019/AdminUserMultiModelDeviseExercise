@@ -1,0 +1,125 @@
+﻿<% if @property.new_record? %>
+
+	<%= form_for [:admin, @property], url: admin_properties_path, local: true, method: :post do |f| %>
+
+		<h3>Property Details</h3>
+	
+		<%= f.hidden_field :id %>
+
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+
+		<%= f.label :owner %>
+		<%= f.text_field :owner %> 
+
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+
+		<%= f.label :coverage %>
+		<%= f.text_field :coverage %> 
+
+		<%= f.fields_for :amenity do |amenity_form| %>
+			<%= amenity_form.hidden_field :id %>
+
+			<%= amenity_form.label :has_pool, 'Has Pool?' %>
+			<%= amenity_form.check_box :has_pool %> 
+
+			<%= amenity_form.label :has_garage, 'Has Garage?' %>
+			<%= amenity_form.check_box :has_garage %> 
+
+			<%= amenity_form.label :has_balcony, 'Has Balcony?' %>
+			<%= amenity_form.check_box :has_balcony %> 
+
+			<%= amenity_form.label :has_roof, 'Has Roof?' %>
+			<%= amenity_form.check_box :has_roof %> 
+
+			<%= amenity_form.label :has_terrace, 'Has Terrace?' %>
+			<%= amenity_form.check_box :has_terrace %>
+		
+			<%= amenity_form.label :has_kitchen, 'Has Kitchen?' %>
+			<%= amenity_form.check_box :has_kitchen %>
+		
+			<%= amenity_form.label :has_storage, 'Has Storage?' %>
+			<%= amenity_form.check_box :has_storage %> 
+
+			<%= amenity_form.label :has_barbq, 'Has Bar BQ?' %>
+			<%= amenity_form.check_box :has_barbq %>
+		
+			<%= amenity_form.label :has_gym, 'Has Gym?' %>
+			<%= amenity_form.check_box :has_gym %> 
+
+			<%= amenity_form.label :has_studio, 'Has Studio?' %>
+			<%= amenity_form.check_box :has_studio %>
+		
+			<%= amenity_form.label :has_cinema, 'Has Cinema?' %>
+			<%= amenity_form.check_box :has_cinema %> 
+		<% end %>
+
+		<%= f.submit 'Create Property' %>
+		<% end %>
+<% else %>
+
+	<%= form_for [:admin, @property], url: edit_admin_property_path(@property), local: true, method: :patch do |f| %>
+
+	<h3>Property Details</h3>
+	
+		<%= f.hidden_field :id %>
+
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+
+		<%= f.label :owner %>
+		<%= f.text_field :owner %> 
+
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+
+		<%= f.label :coverage %>
+		<%= f.text_field :coverage %> 
+
+		<%= f.fields_for :amenity do |amenity_form| %>
+			<%= amenity_form.hidden_field :id %>
+
+			<%= amenity_form.label :has_pool, 'Has Pool?' %>
+			<%= amenity_form.check_box :has_pool %> 
+
+			<%= amenity_form.label :has_garage, 'Has Garage?' %>
+			<%= amenity_form.check_box :has_garage %> 
+
+			<%= amenity_form.label :has_balcony, 'Has Balcony?' %>
+			<%= amenity_form.check_box :has_balcony %> 
+
+			<%= amenity_form.label :has_roof, 'Has Roof?' %>
+			<%= amenity_form.check_box :has_roof %> 
+
+			<%= amenity_form.label :has_terrace, 'Has Terrace?' %>
+			<%= amenity_form.check_box :has_terrace %>
+		
+			<%= amenity_form.label :has_kitchen, 'Has Kitchen?' %>
+			<%= amenity_form.check_box :has_kitchen %>
+		
+			<%= amenity_form.label :has_storage, 'Has Storage?' %>
+			<%= amenity_form.check_box :has_storage %> 
+
+			<%= amenity_form.label :has_barbq, 'Has Bar BQ?' %>
+			<%= amenity_form.check_box :has_barbq %>
+		
+			<%= amenity_form.label :has_gym, 'Has Gym?' %>
+			<%= amenity_form.check_box :has_gym %> 
+
+			<%= amenity_form.label :has_studio, 'Has Studio?' %>
+			<%= amenity_form.check_box :has_studio %>
+		
+			<%= amenity_form.label :has_cinema, 'Has Cinema?' %>
+			<%= amenity_form.check_box :has_cinema %> 
+		<% end %>
+
+		<%= f.submit 'Update Property' %>
+		<% end %>
+<% end %>

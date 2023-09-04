@@ -34,6 +34,11 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="app\views\admin\properties\.editorconfig" />
+    <None Include="app\views\admin\properties\edit.html.erb" />
+    <None Include="app\views\admin\properties\index.html.erb" />
+    <None Include="app\views\admin\properties\new.html.erb" />
+    <None Include="app\views\admin\properties\_form.html.erb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

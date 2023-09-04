@@ -1,0 +1,25 @@
+﻿<h1> List of Properties will come here </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Owner</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @properties.each do |property| %>
+    <tr>
+      <td><%= property.title %></td>
+      <td>
+        <%= property.owner %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_admin_property_path(property) %>
+        </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Add New Property', new_admin_property_path %>

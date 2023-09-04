@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 	resources :properties 
   end 
 
+
   namespace :users do
 	resources :properties 
   end
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
   
   get 'pages/users'
   get 'pages/admin'
-  
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
