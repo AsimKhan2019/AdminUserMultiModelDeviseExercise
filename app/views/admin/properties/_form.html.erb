@@ -62,7 +62,7 @@
 		<% end %>
 <% else %>
 
-	<%= form_for [:admin, @property], url: edit_admin_property_path(@property), local: true, method: :patch do |f| %>
+	<%= form_for [:admin, @property], url: admin_property_path(@property), local: true, method: :patch do |f| %>
 
 	<h3>Property Details</h3>
 	
